@@ -73,3 +73,4 @@ ge the entire class to work together to create a suite of checks covering both r
 
 ## Authors:
 [Mathias KINNINKPO](https://github.com/mathias-kinninkpo) <br/>
+[Prince Asirifi](https://github.com/TheLonewolfpk)
