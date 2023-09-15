@@ -83,11 +83,11 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
-	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	char **cmd_buf; 
+	int cmd_buf_type; 
 	int readfd;
 	int histcount;
-} info_t;
+} information_t;
 
 
 
@@ -103,18 +103,18 @@ typedef struct passinfo
 typedef struct builtin
 {
 	char *type;
-	int (*func)(info_t *);
+	int (*func)(information_t *);
 } builtin_table;
 
 
 
-int hsh(info_t *, char **);
-int find_builtin(info_t *);
-void find_cmd(info_t *);
-void fork_cmd(info_t *);
-int is_cmd(info_t *, char *);
+int hsh(information_t *, char **);
+int find_builtin(information_t *);
+void find_cmd(information_t *);
+void fork_cmd(information_t *);
+int is_cmd(information_t *, char *);
 char *dup_chars(char *, int, int);
-char *find_path(info_t *, char *, char *);
+char *find_path(information_t *, char *, char *);
 int loophsh(char **);
 void _eputs(char *);
 int _eputchar(char);
@@ -137,39 +137,39 @@ char *_memset(char *, char, unsigned int);
 void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 int bfree(void **);
-int interactive(info_t *);
+int interactive(information_t *);
 int is_delim(char, char *);
 int _isalpha(int);
 int _atoi(char *);
 int _erratoi(char *);
-void print_error(info_t *, char *);
+void print_error(information_t *, char *);
 int print_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
-int _myhistory(info_t *);
-int _myalias(info_t *);
-ssize_t get_input(info_t *);
-int _getline(info_t *, char **, size_t *);
+int _myexit(information_t *);
+int _mycd(information_t *);
+int _myhelp(information_t *);
+int _myhistory(information_t *);
+int _myalias(information_t *);
+ssize_t get_input(information_t *);
+int _getline(information_t *, char **, size_t *);
 void sigintHandler(int);
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int _env_lst(info_t *);
-char **get_environ(info_t *);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
-char *get_history_file(info_t *info);
-int write_history(info_t *info);
-int read_history(info_t *info);
-int build_history_lst(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+void clear_info(information_t *);
+void set_info(information_t *, char **);
+void free_info(information_t *, int);
+char *_getenv(information_t *, const char *);
+int _myenv(information_t *);
+int _mysetenv(information_t *);
+int _myunsetenv(information_t *);
+int _env_lst(information_t *);
+char **get_environ(information_t *);
+int _unsetenv(information_t *, char *);
+int _setenv(information_t *, char *, char *);
+char *get_history_file(information_t *info);
+int write_history(information_t *info);
+int read_history(information_t *info);
+int build_history_lst(information_t *info, char *buf, int linecount);
+int renumber_history(information_t *info);
 lst_t *add_node(lst_t **, const char *, int);
 lst_t *add_node_end(lst_t **, const char *, int);
 size_t print_lst_str(const lst_t *);
@@ -180,10 +180,10 @@ char **lst_to_strings(lst_t *);
 size_t print_lst(const lst_t *);
 lst_t *node_starts_with(lst_t *, char *, char);
 ssize_t get_node_index(lst_t *, lst_t *);
-int is_chain(info_t *, char *, size_t *);
-void check_chain(info_t *, char *, size_t *, size_t, size_t);
-int rplc_alias(info_t *);
-int rplc_vars(info_t *);
+int is_chain(information_t *, char *, size_t *);
+void check_chain(information_t *, char *, size_t *, size_t, size_t);
+int rplc_alias(information_t *);
+int rplc_vars(information_t *);
 int rplc_string(char **, char *);
 
 #endif
