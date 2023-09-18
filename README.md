@@ -1,6 +1,6 @@
 # Simple_Shell
 
-## Requirements
+## The Requirements
 
 ### List of allowed functions and system calls
 
