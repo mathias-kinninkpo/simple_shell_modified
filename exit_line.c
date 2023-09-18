@@ -1,5 +1,4 @@
-#include "shell.h"
-
+#include "hsh.h"
 /**
  * exit_shell - fucntion to handle the "exit" command.
  * @inptsh: pointer to the data structure that holds.
