@@ -1,5 +1,4 @@
-#include "shell.h"
-
+#include "hsh.h"
 /**
  * _strlen - returns the length of a string
  * @str: the string whose length to check
