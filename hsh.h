@@ -1,5 +1,5 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef _HSH_H_
+#define _HSH_H_
 
 
 #include <stdio.h>
@@ -13,19 +13,16 @@
 #include <fcntl.h>
 #include <errno.h>
 
-#define READ_BUF_SIZE 1024
-#define WRITE_BUF_SIZE 1024
-#define BUF_FLUSH -1
-#define CMD_NORM	0
-#define CMD_OR		1
-#define CMD_AND		2
-#define CMD_CHAIN	3
-#define CONVERT_LOWERCASE	1
-#define CONVERT_UNSIGNED	2
-#define USE_GETLINE 0
-#define USE_STRTOK 0
-#define HIST_FILE	"._history"
-#define HIST_MAX	4096
+
+
+
+
+
+
+
+
+
+
 
 
 extern char **environ;
@@ -91,7 +88,7 @@ typedef struct passinfo
 
 
 
-#define INFO_INIT \
+#define INFORMATION_INITIATION \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
 
@@ -153,6 +150,7 @@ int _myhistory(information_t *);
 int _myalias(information_t *);
 ssize_t get_input(information_t *);
 int _getline(information_t *, char **, size_t *);
+
 void sigintHandler(int);
 void clear_info(information_t *);
 void set_info(information_t *, char **);
@@ -185,6 +183,23 @@ void check_chain(information_t *, char *, size_t *, size_t, size_t);
 int rplc_alias(information_t *);
 int rplc_vars(information_t *);
 int rplc_string(char **, char *);
+
+
+
+
+#define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
+#define CMD_NORM	0
+#define CMD_OR		1
+#define CMD_AND		2
+#define CMD_CHAIN	3
+#define CONVERT_LOWERCASE	1
+#define CONVERT_UNSIGNED	2
+#define USE_GETLINE 0
+#define USE_STRTOK 0
+#define HIST_FILE	"._history"
+#define HIST_MAX	4096
 
 #endif
 
